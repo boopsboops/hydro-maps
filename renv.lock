@@ -1629,31 +1629,6 @@
       ],
       "Hash": "9b148e7f95d33aac01f31282d49e4f44"
     },
-    "rnaturalearth": {
-      "Package": "rnaturalearth",
-      "Version": "1.0.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "httr",
-        "jsonlite",
-        "sf",
-        "terra",
-        "utils"
-      ],
-      "Hash": "741166cab0fe76d8a5670d3ee459a2a4"
-    },
-    "rnaturalearthdata": {
-      "Package": "rnaturalearthdata",
-      "Version": "1.0.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "650339de24d9574c0079a4a13baa623d"
-    },
     "rosm": {
       "Package": "rosm",
       "Version": "0.3.0",
