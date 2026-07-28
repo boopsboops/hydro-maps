@@ -33,7 +33,8 @@ get_country_region <- function(country,resolution,year) {
 
 # fun to get river data from hydrosheds
 get_hydrosheds_rivers <- function(url) {
-    shp.zip <- str_split_fixed("https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_as_shp.zip","/",6)[,6]
+    #shp.zip <- str_split_fixed("https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_as_shp.zip","/",6)[,6]
+    shp.zip <- basename(url)
     shp.dir <- str_replace_all(shp.zip,".zip","")
     shp.file <- str_replace_all(shp.zip,"_shp.zip",".shp")
     shp.path <- here("assets",shp.dir,shp.file)

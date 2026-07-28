@@ -21,7 +21,7 @@ country.region <- country.focus
 ### RIVERS ###
 
 # download (or load from file) from hydrosheds
-rivers <- get_hydrosheds_rivers(url="https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_af_shp.zip") 
+rivers <- get_hydrosheds_rivers(url="https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_af_shp.zip")
 
 # crop to country
 rivers.crop <- sf::st_crop(rivers,country.region)
@@ -38,7 +38,7 @@ rivers.filt <- rivers.crop |>
 
 ### LAKES ###
 
-download.file(url="https://datacatalogfiles.worldbank.org/ddh-published/0040797/DR0050937/africawaterbody.zip?versionId=2021-10-21T15:47:45.0457408Z",destfile=here("assets/africawaterbody.zip"))
+download.file(url="https://datacatalogfiles.worldbank.org/ddh-published-v2/0040797/1/DR0050937/africawaterbody.zip",destfile=here("assets/africawaterbody.zip"))
 unzip(zipfile=here("assets/africawaterbody.zip"),exdir=here("assets"))
 lakes <- sf::st_read(here("assets/Africa_waterbody.shp"))
 
