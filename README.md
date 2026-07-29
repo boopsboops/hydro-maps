@@ -35,6 +35,14 @@ conda env create -f conda.yaml
 # activate conda env
 conda activate hydro-maps
 
+# important! need to spoof some symlinks for shared libs to keep R and conda happy
+ln -s $CONDA_PREFIX/include/freetype2/ft2build.h $CONDA_PREFIX/include/ft2build.h
+ln -s $CONDA_PREFIX/include/freetype2/freetype $CONDA_PREFIX/include/freetype
+ln -s $CONDA_PREFIX/include/cairo/* $CONDA_PREFIX/include/
+
+# can also restore individually in R to diagnose problems better, e.g. renv::restore(packages="ape")
+Rscript -e "renv::restore()"
+
 # once you have finished analysis leave conda env
 conda deactivate
 

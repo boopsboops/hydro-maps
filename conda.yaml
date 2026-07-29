@@ -15,7 +15,7 @@ dependencies:
   - zlib
   - bzip2
   - readline
-  - sqlite 
+  - sqlite
   - wget
   - curl
   - llvm
@@ -37,12 +37,14 @@ dependencies:
   - pandoc
   - harfbuzz
   - fribidi
+  - abseil-cpp
+  - libjpeg-turbo
+  - xorg-libx11
 
 # map software 
   - udunits2
   - gdal
   - geos
   - proj
-  - sqlite
   - tbb
-  - netcdf-c
+  - netcdf4
