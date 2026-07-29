@@ -3,6 +3,8 @@
 # load libs and funs
 source(here::here("scripts/load-libs.R"))
 
+# create tempdir for output
+if(!dir.exists(here::here("temp"))) { dir.create(here::here("temp")) }
 
 
 ### BASEMAP ###
@@ -36,11 +38,13 @@ rivers.filt <- rivers.crop |>
     dplyr::mutate(width=as.numeric(ORD_FLOW), width=flipper(width))
 
 
+
 ### LAKES ###
 
 download.file(url="https://datacatalogfiles.worldbank.org/ddh-published-v2/0040797/1/DR0050937/africawaterbody.zip",destfile=here("assets/africawaterbody.zip"))
 unzip(zipfile=here("assets/africawaterbody.zip"),exdir=here("assets"))
 lakes <- sf::st_read(here("assets/Africa_waterbody.shp"))
+
 
 
 ### TOPOGRAPHY ###
@@ -52,6 +56,7 @@ country.elevation <- elevatr::get_elev_raster(locations=country.region,clip="bbo
 
 
 ### SHADE ###
+
 # https://dieghernan.github.io/202210_tidyterra-hillshade/
 # https://dominicroye.github.io/en/2022/hillshade-effects/
 
@@ -88,9 +93,6 @@ vector.cols <- pal.greys[index]
 ### ADD DATA ###
 
 # gbif
-# load data from 
-library("rgbif")
-
 ent.raw <- rgbif::occ_search(scientificName="Enteromius paludinosus",limit=5000) 
 ent.tib <- ent.raw$data |> tibble()
 

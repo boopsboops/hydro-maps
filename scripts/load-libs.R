@@ -8,10 +8,15 @@ library("elevatr")
 library("terra")
 library("marmap")
 library("giscoR")
-library("terra")
 library("tidyterra")
 library("scales")
 library("ggspatial")
+library("rgbif")
+library("rnaturalearth")
+
+#sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+#sudo apt update
+#sudo apt install libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite3-dev libtbb-dev libnetcdf-dev
 
 
 # fun to get base country/region

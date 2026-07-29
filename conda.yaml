@@ -1,0 +1,21 @@
+name: hydro-maps
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - r-base=4.6.1
+  - here=1.0.2
+  - tidyverse=2.0.0
+  - sf=1.1-2
+  - elevatr=0.99.1
+  - terra=1.9-34
+  - marmap=1.0.12
+  - giscoR=1.1.1
+  - tidyterra=1.2.0
+  - scales=1.4.0
+  - ggspatial=1.1.10
+  - rgbif=3.8.5
+  - rnaturalearth=1.2.0
