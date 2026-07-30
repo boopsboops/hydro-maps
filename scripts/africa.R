@@ -135,4 +135,7 @@ prettyplot <- baseplot +
     ggspatial::annotation_scale()
 
 #plot(prettyplot)
-ggsave(filename=here("temp/africa-pretty.png"),width=210,height=297,units="mm",dpi=300,device="png",plot=prettyplot)
+ggsave(filename=here::here("temp/africa-pretty.png"),width=210,height=297,units="mm",dpi=300,device="png",plot=prettyplot)
+
+# report if done
+if(file.exists(here::here("temp/africa-pretty.png"))) {writeLines("\nMapping completed ... map files written to 'temp'.")} else stop("map files not created.")
